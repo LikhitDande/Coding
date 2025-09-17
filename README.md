@@ -12,3 +12,20 @@ class Solution(object):
             else:
                 cur = 0
         return res
+
+     Palindrome Linked List
+     class Solution:
+    def isPalindrome(self, head: Optional[ListNode]) -> bool:
+        l=[]
+        temp=head
+        while(temp):
+            l.append(temp.val)
+            temp=temp.next
+        low=0
+        high=len(l)-1
+        while(low<=high):
+            if(l[low]!=l[high]):
+                return False
+            low+=1
+            high-=1
+        return True
