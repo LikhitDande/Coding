@@ -6,7 +6,7 @@ class Solution(object):
         cur = 0
         for n in nums:
             if n:
-                cur += 1
+                cur += 1 
                 if cur > res:
                     res = cur
             else:
