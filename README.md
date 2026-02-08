@@ -43,3 +43,24 @@ class Solution(object):
         reversed_x *= sign
         return 0 if reversed_x < -2**31 or reversed_x > 2**31 - 1 else reversed_x
 
+        Leet Code 1838:
+    class Solution:
+    def maxFrequency(self, nums: list[int], k: int) -> int:
+        nums.sort()
+        left = 0
+        total = 0
+        result = 1
+
+        for right in range(len(nums)):
+            total += nums[right]
+
+            # Cost to make all elements in window equal to nums[right]
+            while nums[right] * (right - left + 1) > total + k:
+                total -= nums[left]
+                left += 1
+
+            result = max(result, right - left + 1)
+
+        return result
+
+
