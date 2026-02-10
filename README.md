@@ -1,4 +1,8 @@
 # Coding
+
+
+
+
 sum of two numbers
 class Solution(object):
     def findMaxConsecutiveOnes(self, nums):
@@ -78,6 +82,17 @@ class Solution:
         reverse(0, n - 1)
         reverse(0, k - 1)
         reverse(k, n - 1)
+
+Leet code(136):
+
+class Solution:
+    def singleNumber(self, nums):
+        result = 0
+        for num in nums:
+            result ^= num
+        return result
+
+
 
 
 
