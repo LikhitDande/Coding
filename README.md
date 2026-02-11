@@ -92,6 +92,28 @@ class Solution:
             result ^= num
         return result
 
+Leetcode (1):
+
+class Solution:
+    def twoSum(self, nums, target):
+        hashmap = {}
+        for i, num in enumerate(nums):
+            if target - num in hashmap:
+                return [hashmap[target - num], i]
+            hashmap[num] = i
+leetcode (169):
+
+class Solution:
+    def majorityElement(self, nums):
+        candidate = None
+        count = 0
+
+        for num in nums:
+            if count == 0:
+                candidate = num
+            count += 1 if num == candidate else -1
+
+        return candidate
 
 
 
