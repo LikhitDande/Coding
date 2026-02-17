@@ -233,6 +233,40 @@ class Solution:
             for i in range(rows):
                 matrix[i][0] = 0
 
+leet code(38):
+class Solution:
+    def countAndSay(self, n: int) -> str:
+        result = "1"
+        
+        for _ in range(n - 1):
+            current = ""
+            count = 1
+            
+            for i in range(1, len(result)):
+                if result[i] == result[i - 1]:
+                    count += 1
+                else:
+                    current += str(count) + result[i - 1]
+                    count = 1
+            
+            # Add the last group
+            current += str(count) + result[-1]
+            result = current
+        
+        return result
+leetcode (48):
+class Solution:
+    def rotate(self, matrix: List[List[int]]) -> None:
+        n = len(matrix)
+        
+        # Step 1: Transpose the matrix
+        for i in range(n):
+            for j in range(i + 1, n):
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+        
+        # Step 2: Reverse each row
+        for row in matrix:
+            row.reverse()
 
 
 
